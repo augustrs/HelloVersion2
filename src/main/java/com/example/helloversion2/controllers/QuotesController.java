@@ -31,14 +31,15 @@ public class QuotesController {
         return new ResponseEntity<>(quotes.get(randomInt), HttpStatus.OK);
     }
 
-@GetMapping("/random2")
-@ResponseBody
+    @GetMapping("/random2")
+    @ResponseBody
     public ResponseEntity<Quote> getRandomQuote2() {
         List<Quote> quotes = generateList2();
         Random random = new Random();
         int randomInt = random.nextInt(3);
         return new ResponseEntity<>(quotes.get(randomInt), HttpStatus.OK);
     }
+
     @GetMapping("/random3")
     public ResponseEntity<Object> getRandomQuote3() throws IOException {
         URL url = new URL("https://quote-garden.onrender.com/api/v3/quotes/random");
